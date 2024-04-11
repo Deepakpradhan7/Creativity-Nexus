@@ -27,7 +27,7 @@ const Card = ({item, key}:any) => {
             <h1 className='font-semibold'>{item.title}</h1>
             </Link>
             <p style={{ color: 'var(--softTextColor)' }} className='text-md'>{item.desc.substring(0,120)}</p>
-            <Link href={`/posts/${item.slug}`} className='text-gray-600 font-medium w-max border-b-2'>Read more</Link>
+            <Link href={`/posts/${item.slug}`} className='text-gray-600 font-medium w-max border-b-2 border-rose-400'>Read more</Link>
           </div>
     </div>
     </Link>

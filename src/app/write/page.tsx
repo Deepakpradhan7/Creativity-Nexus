@@ -98,7 +98,7 @@ const WritePage = () => {
 
       const handleSubmit = async () => {
         setLoading(true)
-        const res = await fetch("/api/posts", {
+        const res = await fetch("https://creativitynexus.vercel.app/api/posts", {
           method: "POST",
           body: JSON.stringify({
             title,
@@ -123,7 +123,7 @@ const WritePage = () => {
 
     
   const isDisabled = !title || !catSlug ;
-  
+
   return (
     <div>
     <div className='con'>
@@ -161,7 +161,7 @@ const WritePage = () => {
     </div>
     <button
   disabled={isDisabled}
-  className={`bg-green-700 px-4 py-2 text-white absolute mt-14 rounded-md`}
+  className={`bg-green-500 px-4 py-2 text-white absolute mt-14 rounded-md`}
   style={{ cursor: isDisabled || loading ? "not-allowed" : "pointer" }}
   onClick={handleSubmit}
 >

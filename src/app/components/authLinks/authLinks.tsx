@@ -34,7 +34,7 @@ const AuthLinks = () => {
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
-          <Button className="w-full flex gap-3" onClick={()=>signIn('google')}>
+          <Button className="w-full flex gap-3 " onClick={()=>signIn('google')}>
           <FcGoogle />
             Sign in with Google</Button>
         </DialogFooter>

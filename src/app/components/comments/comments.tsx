@@ -34,11 +34,11 @@ const Comments = ({postSlug}:any) => {
   const [desc, setDesc] = useState('')
   // console.log(postSlug, 'postSlug')
   const {status} = useSession() 
-  const { data ,mutate, isLoading} = useSWR(`http://localhost:3000/api/comments?postSlug=${postSlug}`, fetcher )
+  const { data ,mutate, isLoading} = useSWR(`https://creativitynexus.vercel.app/api/comments?postSlug=${postSlug}`, fetcher )
   // console.log(data,isLoading, 'cdat')
 
   const handleSubmit = async() =>{
-    await fetch('/api/comments', {
+    await fetch('https://creativitynexus.vercel.app/api/comments', {
       method: 'POST',
       body: JSON.stringify({desc, postSlug})
     })
@@ -54,7 +54,7 @@ const Comments = ({postSlug}:any) => {
           //@ts-ignore
           <div className='flex justify-between items-center gap-8' onChange={(e)=>setDesc(e.target.value)}>
             <textarea value={desc} name='' id='' placeholder='write a comment...' className='w-full px-5 py-1' />
-            <button className='bg-green-700 text-white rounded-md px-3 py-2 text-sm font-semibold' onClick={handleSubmit}>Send</button>
+            <button className='bg-green-500 text-white rounded-md px-3 py-2 text-sm font-semibold' onClick={handleSubmit}>Send</button>
           </div>
         ) : (
           <Dialog >

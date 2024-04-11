@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/categories", {
+  const res = await fetch("https://creativitynexus.vercel.app/api/categories", {
     cache: 'no-store'
   })
 
