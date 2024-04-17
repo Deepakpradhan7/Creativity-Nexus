@@ -7,12 +7,14 @@ import AuthProvider from "@/providers/AuthProvider";
 import { getAuthSession } from "@/utils/auth";
 import ToastProvider from "@/providers/ToastProvider";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Creativity Nexus | Art Blogs",
-  description: "Art Blogs",
-};
+// export const metadata: Metadata = {
+//   title: "Creativity Nexus | Art Blogs",
+//   description: "Art Blogs",
+//   icons: '/creativity.png',
+// };
 
 export default function RootLayout({
   children,
@@ -22,6 +24,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      
       <body className={inter.className}>
       <ToastProvider/>
         <AuthProvider>
@@ -38,4 +41,12 @@ export default function RootLayout({
         </body>
     </html>
   );
+}
+export async function generateMetadata(){
+ 
+  return {
+    title: 'Creativity Nexus',
+    description:  'Art Blogs',
+    icons: '/creativity.png'
+  };
 }
